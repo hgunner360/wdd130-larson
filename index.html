@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Another Fine Gif</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
@@ -24,6 +25,14 @@
             <h2>Meme Search</h2>
             <form id="meme-search-form">
                 <input type="text" id="search-query" name="search-query" placeholder="Search for meme templates...">
+                <label for="category-select" class="visually-hidden">Choose category</label>
+                <select id="category-select" name="category">
+                    <option value="all" selected>All categories</option>
+                    <option value="funny">Funny</option>
+                    <option value="reaction">Reaction</option>
+                    <option value="tv-movie">TV / Movie</option>
+                    <option value="political">Political</option>
+                </select>
                 <button type="submit">Search</button>
             </form>
         </wrapper>
