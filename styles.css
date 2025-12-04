@@ -3,25 +3,27 @@
     padding: 0;
     box-sizing: border-box;
 }
+@import url('https://fonts.cdnfonts.com/css/hobbiton-brush-hand');
+@import url('https://fonts.cdnfonts.com/css/assassin');
 
-header {
+p {
+    font-family: 'Assassin$', sans-serif;
+}
+
+#header, header {
     width: 100%;
-    background: #222222;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    gap: 10px;
-    padding: 15px;
+    background-color: #222222; 
+    border-bottom: 2px solid #329664; 
+    padding: 1rem 1.5rem;
     box-sizing: border-box;
-    font-family: 'HobbitonBrushHand', cursive;
 }
 
 
-.header-top {
-    width: 100%;
+.header-top, .header-content {
     display: flex;
+    flex-direction: column; 
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 10px;
@@ -30,15 +32,15 @@ header {
 
 
 #logo {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    padding-left: 15px; 
+    position: static; 
+    align-self: flex-start; 
+    margin-left: 0;
+    padding-left: 0;
+    margin-bottom: 5px; 
 }
 
 #logo img {
-    width: 160px; 
+    width: 130px; 
     height: auto;
     display: block;
 }
@@ -46,64 +48,219 @@ header {
 
 .header-top .centered-content {
     width: 100%;
-    padding-left: 200px; 
+    padding-left: 0; 
     box-sizing: border-box;
+    display: flex;
+    justify-content: center; 
 }
 
 
 header h1 {
+    font-size: 50px;
     text-align: center;
-    font-size: 4em;
-    color: #329664;
     margin: 0;
-    flex: 1 1 auto;
+    width: 100%;
+    position: static;
+    transform: none;
+    color: #329664;
+    padding-bottom: 8px;
 }
 
+header h1 {
+    font-family: 'Hobbiton Brushhand', 'HobbitonBrushHand', cursive;
+}
 
-header nav ul {
-    display: flex;
-    justify-content: center; 
-    gap: 15px;
+nav ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
-}
-header nav a {
-    color: #329664;
-    text-decoration: none;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    padding: 0 2rem;
 }
 
-header nav ul li:first-child a {
-    font-size: 2em;
-    border: #329664 4px solid;
-    border-radius: 20%;
+nav li a {
+    text-decoration: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    margin-left: 0.5rem;
+    border: 1px solid #329664;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+    font-weight: 600;
+    font-size: 25px;
+    letter-spacing: 2px;
 }
-header nav ul li:nth-child(2) a {
-    font-size: 2em;
-    border: #329664 4px solid;
-    border-radius: 20%;
+
+nav li a:hover {
+    color: #329664;
 }
-header nav ul li:nth-child(3) a {
-    font-size: 2em;
-    border: #329664 4px solid;
-    border-radius: 20%;
+
+
+main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    padding: 0 16px;
+    box-sizing: border-box;
 }
 
 #Meme-Search {
-    display: flex;
-    justify-content: flex-start;
-    border: 2px solid #329664;
-    width: 200px;
-    height: 800px;
-    padding-left: 15px;
+    flex: 0 0 320px; 
+    max-width: 40%;
 }
+
+#Meme-Search wrapper, #Meme-Search form {
+    width: 100%;
+}
+
 #search-results {
+    flex: 1 1 auto;
+    border: 5px solid #329664;
+    padding: 12px;
+    background: #000000;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+#search-results h1 {
+    color: #329664;
+    margin-top: 0;
+    font-size: 28px;
+    text-align: left;
+    margin-bottom: 12px;
+}
+
+#search-results wrapper {
+    display: grid;
+   
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    align-items: start;
+}
+
+
+@media (max-width: 1000px) {
+    #search-results wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 600px) {
+    #search-results wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+#search-results wrapper img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+    border-radius: 6px;
+}
+
+/* Hover/touch effects: scale up slightly and add shadow */
+#search-results wrapper img {
+    transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+#search-results wrapper img:hover,
+#search-results wrapper img:focus {
+    transform: scale(1.06);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+    z-index: 2;
+}
+
+/* Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    #search-results wrapper img {
+        transition: none;
+    }
+    #search-results wrapper img:hover,
+    #search-results wrapper img:focus {
+        transform: none;
+        box-shadow: none;
+    }
+}
+
+
+
+
+#Meme-Search {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: flex-start;
+    border: 5px solid #329664;
+    width: 100%;
+    max-width: 320px;       
+    padding: 20px;
+    background: #222222;
+    border-radius: 10px;
+    gap: 15px;
+    box-sizing: border-box;
+}
+
+
+#Meme-Search h2 {
+    color: #329664;
+    margin-top: 0;
+    font-size: 30px;
+    text-align: left;
+}
+
+
+#Meme-Search label {
+    color: #329664;
+    font-size: 14px;
+}
+
+
+#Meme-Search input,
+#Meme-Search select {
+    width: 100%;
+    padding: 10px;
+    background: #1a1a1a;
     border: 2px solid #329664;
-    width: 1000px;
-    height: 800px;
-    margin-left: 20px;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 15px;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+
+#Meme-Search input:focus,
+#Meme-Search select:focus {
+    border-color: #42c47f;
+    box-shadow: 0 0 6px rgba(50, 150, 100, 0.5);
+}
+
+
+#Meme-Search button {
+    padding: 10px;
+    width: 100%;
+    background: #329664;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.2s ease;
+}
+
+#Meme-Search button:hover {
+    background: #42c47f;
+}
+
+
+.visually-hidden {
+    position: absolute;
+    left: -9999px;
+}
+
+body {
+    background-color: #000000;
 }
 
