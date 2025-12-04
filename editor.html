@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme Editor - Another Fine Gif</title>
+    <link rel="stylesheet" href="editor.css">
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <div id="logo">
+                <img src="/Images/giflogo.png" alt="Another Fine Gif Logo"> 
+            </div>
+            <div class="centered-content">
+                <h1>Another Fine Gif</h1> 
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="templates.html">Template Search</a></li>
+                <li><a href="editor.html" class="current-page">Meme Editor</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="editor-main">
+        <section class="editor-interface">
+            <h2>Create Your Own Meme</h2>
+            
+            <div class="controls-and-canvas">
+                
+                <div class="controls-panel">
+                    <h3>Controls</h3>
+                    
+                    <div class="control-group">
+                        <label for="image-upload-input">1. Upload Image:</label>
+                        <input type="file" id="image-upload-input" accept="image/*">
+                    </div>
+
+                    <div class="control-group">
+                        <label for="top-text">2. Top Text:</label>
+                        <input type="text" id="top-text" placeholder="Enter top text here...">
+                    </div>
+
+                    <div class="control-group">
+                        <label for="bottom-text">3. Bottom Text:</label>
+                        <input type="text" id="bottom-text" placeholder="Enter bottom text here...">
+                    </div>
+                    
+                    <button id="download-meme-btn">Download Meme</button>
+                </div>
+                
+                <div class="canvas-container">
+                    <canvas id="meme-canvas" width="600" height="400">
+                        Your browser does not support the HTML5 canvas tag.
+                    </canvas>
+                    <p class="upload-placeholder">Upload image, edit.</p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Elijah Larson | WDD 130 | &copy; 2025 Another Fine Gif</p>
+    </footer>
+    
+    <script src="editor.js"></script> 
+</body>
+</html>
